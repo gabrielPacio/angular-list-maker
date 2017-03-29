@@ -12,8 +12,6 @@ import { ListHeaderComponent } from './list-header-component';
 export class AppComponent {
     @ViewChild(ListHeaderComponent) listHeaderComponent: ListHeaderComponent;
 
-    editedListElement:ListElement;
-
     constructor(private listDataService: ListDataService){
     }
 
@@ -21,14 +19,12 @@ export class AppComponent {
         this.listDataService.addListElement(listElement);
     }
 
-    removeListElement(listElement) {
+    onRemoveClick(listElement) {
         this.listDataService.deleteListElementById(listElement.id);
     }
 
-    edit(listElement) {
-        this.editedListElement = listElement;
+    onEditClick(listElement) {
         this.listHeaderComponent.edit(listElement);
-        //this.isEditMode = true;
     }
 
     get list(){

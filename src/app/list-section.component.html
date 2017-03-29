@@ -1,0 +1,15 @@
+<section class="main" *ngIf="list.length > 0">
+    <ul class="list-all">
+        <li *ngFor="let element of list">
+            <div class="view">
+                <h3>{{element.title}}</h3>
+                <p>{{element.content}}</p>
+                <small>from: {{element.author}}</small>
+                <div class="button-container">
+                    <button class="destroy" (click)="onRemoveClick(element)">Delete</button>
+                    <button class="destroy" (click)="onEditClick(element)">Edit</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>

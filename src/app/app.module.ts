@@ -5,12 +5,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ListHeaderComponent } from './list-header-component';
+import { ListSectionComponent } from './list-section.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListHeaderComponent
+    ListHeaderComponent,
+    ListSectionComponent
   ],
   imports: [
     BrowserModule,

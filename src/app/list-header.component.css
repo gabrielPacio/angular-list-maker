@@ -1,0 +1,36 @@
+.header {
+    margin: 0 auto;
+    width: 90%;
+}
+
+h1 {
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0 0 20px 20px;
+}
+
+label {
+    font-size: 12px;
+    display: block;
+}
+
+input {
+    padding: 5px;
+    border: 1px solid #c5dfe2;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.input-content {
+    width: 100%;
+}
+
+.button-container {
+    text-align: center;
+}
+
+button {
+    width: 100px;
+
+}

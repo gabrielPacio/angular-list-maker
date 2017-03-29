@@ -1,0 +1,30 @@
+.main {
+
+}
+
+li {
+    list-style-type: none;
+    padding-left: 0;
+    width: 90%;
+    margin: 20px auto;
+    padding:20px;
+    border: 2px solid #c5dfe2;
+    border-radius: 5px;
+    box-shadow: 4px 4px 20px #aaa;
+}
+
+h3 {
+    font-weight: 400;
+    text-transform: uppercase;
+    border-bottom: 1px solid #c5dfe2;
+}
+
+p {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 7px #aaa;
+}
+.button-container {
+    text-align: center;
+}
