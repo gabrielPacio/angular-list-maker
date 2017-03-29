@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ListDataService } from './list-data.service';
 import { ListElement } from './list-element';
+import { ListHeaderComponent } from './list-header-component';
 
 @Component({
     selector: 'app-root',
@@ -9,16 +10,15 @@ import { ListElement } from './list-element';
     providers: [ListDataService]
 })
 export class AppComponent {
+    @ViewChild(ListHeaderComponent) listHeaderComponent: ListHeaderComponent;
 
-    newListElement = new ListElement();
-    isEditMode:boolean = false;
+    editedListElement:ListElement;
 
     constructor(private listDataService: ListDataService){
     }
 
-    addListElement() {
-        this.listDataService.addListElement(this.newListElement);
-        this.newListElement = new ListElement();
+    onAddListElement(listElement) {
+        this.listDataService.addListElement(listElement);
     }
 
     removeListElement(listElement) {
@@ -26,13 +26,9 @@ export class AppComponent {
     }
 
     edit(listElement) {
-        this.newListElement = listElement;
-        this.isEditMode = true;
-        console.log('aaaa',this.isEditMode);
-    }
-
-    clearHeader() {
-        this.newListElement = new ListElement();
+        this.editedListElement = listElement;
+        this.listHeaderComponent.edit(listElement);
+        //this.isEditMode = true;
     }
 
     get list(){

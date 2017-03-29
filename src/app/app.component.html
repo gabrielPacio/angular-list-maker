@@ -1,22 +1,5 @@
 <section class="listapp">
-    <header class="header">
-        <h1>List Maker</h1>
-        <label>List Title:</label>
-        <input class="new-list-title"
-            placeholder="Write the title"
-            autofocus=""
-            [(ngModel)]="newListElement.title">
-        <label>Content:</label>
-        <input class="new-list-title"
-            placeholder="add the content"
-            [(ngModel)]="newListElement.content">
-        <label>Author:</label>
-        <input class="new-list-title"
-            placeholder="add the author"
-            [(ngModel)]="newListElement.author">
-        <button *ngIf="!isEditMode" (click)="addListElement()">Add list</button>
-        <button *ngIf="isEditMode" (click)="clearHeader()">Done Editing</button>
-    </header>
+    <app-list-header (add)="onAddListElement($event)"></app-list-header>
     <section class="main" *ngIf="list.length > 0">
         <ul class="list-all">
             <li *ngFor="let element of list">
